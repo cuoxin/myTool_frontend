@@ -1,13 +1,19 @@
-# myTool_frontend
+# my-project
 
-## 说明
+## Project setup
+```
+yarn install
+```
 
-自己做微信小程序的小工具前端部分，目前暂定开源
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-## 贡献者
+### Compiles and minifies for production
+```
+yarn build
+```
 
-- AdrianYan
-
-## 包列表
-
-- Taro@3.0.17
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
