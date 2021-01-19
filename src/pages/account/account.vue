@@ -1,15 +1,20 @@
 <template>
   <view>
-    <status-bar></status-bar>
+    <status-bar :backgroundColor="'#6190E8'"></status-bar>
+    <high-nav>
+      <time-nav></time-nav>
+    </high-nav>
     <view>{{ content }}</view>
   </view>
 </template>
 
 <script>
+import HighNav from '../../components/HighNav/HighNav.vue';
 import StatusBar from "../../components/StatusBar/StatusBar.vue";
+import TimeNav from "../../components/TimeNav/TimeNav.vue"
 
 export default {
-  components: { StatusBar },
+  components: { StatusBar, HighNav, TimeNav },
 
   data() {
     return {
