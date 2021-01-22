@@ -1,22 +1,49 @@
 <template>
-  <view>
-    <view class="timeNav-ico"></view>
-    <view class="timeNav-timeChoose">
-      <date-choose @func="getChildrenDate" />
+  <view
+    class="timeNav-box"
+    :style="{ height: timeNavBoxStyle.height, top: timeNavBoxStyle.top }"
+  >
+    <view class="timeNav-box-" :style="{ height: timeNavBoxStyle.height }">
+      <view class="timeNav-ico">图</view>
+      <date-choose
+        class="timeNav-dateChoose-box"
+        @func="getChildrenDate"
+        end_type="month"
+      />
     </view>
   </view>
 </template>
 <script>
 import DateChoose from "../DateChoose/DateChoose.vue";
+
+let getCapsuleData = () => {
+  let state = uni.getMenuButtonBoundingClientRect();
+  let style = {
+    height: state.height + "px",
+    top: state.top + "px"
+  };
+
+  return style;
+};
+
 export default {
   components: { DateChoose },
 
+  data() {
+    let timeNavBox = getCapsuleData();
+
+    return {
+      timeNavBoxStyle: timeNavBox
+    };
+  },
+
   methods: {
     getChildrenDate: function(data) {
-      // TODO: 将数据保存，顺便更改选择器的样式，建议对日期选择增加更多的参数
       console.log(data);
     }
   }
 };
 </script>
-DateChoose
+<style scoped>
+@import url(./TimeNav.css);
+</style>
